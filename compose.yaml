@@ -29,7 +29,7 @@ services:
     environment:
       - GF_FEATURE_TOGGLES_ENABLE=grafanaManagedRecordingRules
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
-      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ENABLED=false
       - GF_AUTH_ANONYMOUS_HIDE_VERSION=true
       - GF_AUTH_BASIC_ENABLED=false
     ports:
@@ -55,6 +55,10 @@ services:
         /run.sh
     networks:
       - loki
+    volumes:
+      - grafana_data:/var/lib/grafana
 
 networks:
   loki:
+volumes:
+  grafana_data:
