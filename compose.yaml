@@ -28,8 +28,8 @@ services:
     image: grafana/grafana:11.6.0
     environment:
       - GF_FEATURE_TOGGLES_ENABLE=grafanaManagedRecordingRules
-      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
-      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+      - GF_AUTH_ANONYMOUS_ENABLED=false
       - GF_AUTH_BASIC_ENABLED=false
     ports:
       - 4000:3000/tcp
