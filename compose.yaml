@@ -17,7 +17,7 @@ services:
   loki:
     image: grafana/loki:3.4.2
     ports:
-      - "3100:3100"
+      - "4100:3100"
     volumes:
       - ./loki-config.yaml:/etc/loki/local-config.yaml
     command: -config.file=/etc/loki/local-config.yaml
@@ -32,7 +32,7 @@ services:
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_BASIC_ENABLED=false
     ports:
-      - 3000:3000/tcp
+      - 4000:3000/tcp
     entrypoint:
       - sh
       - -euc
